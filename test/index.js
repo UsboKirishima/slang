@@ -1,5 +1,6 @@
 const {Slang} = require('../dist/lib/Slang');
+require('dotenv/config')
 
-const client = new Slang({ APIkey: ''});
+const client = new Slang({ APIkey: process.env.APIKEY });
 
-console.log(client.start('government name'))
+client.example('government name')
