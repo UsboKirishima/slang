@@ -1,6 +1,14 @@
 import axios from "axios";
 import { Slang } from "../Slang";
 
+export interface RestManagerReqOpts {
+    Rmethod: string;
+    Rurl: string;
+    Rparams: object;
+    Rheaders: object;
+    Rwhat: string;
+}
+
 export class RestManager {
 
     public async req({
@@ -9,13 +17,7 @@ export class RestManager {
         Rparams,
         Rheaders,
         Rwhat
-    }:{
-        Rmethod: string;
-        Rurl: string;
-        Rparams: object;
-        Rheaders: object;
-        Rwhat: string;
-    }) {
+    } : RestManagerReqOpts) {
         axios.request({
             method: Rmethod,
             url: Rurl,
